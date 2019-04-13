@@ -30,7 +30,7 @@ Create a REST API server to store and read data from a MySQL data. The table lay
   
 There is a one to many relationship between zoos and telephones. One zoo can have multiple phone numbers but each phone number can only belong to one zoo.
 
-- [ ] Animal
+- [x] Animal
   * animalid - long primary key
   * animaltype - String
 
