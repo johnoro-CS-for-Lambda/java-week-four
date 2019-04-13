@@ -44,8 +44,8 @@ Expose the following end points
 - [x] GET /zoos - returns all zoos with their phone numbers and animals
 - [x] GET /zoos/{name} - return the zoo with this name with its phone numbers and animals
 
-- [ ] GET /animals - returns all animals with their zoos
-- [ ] GET /animals/{type} - return the animal with a list of zoos where they can be found
+- [x] GET /animals - returns all animals with their zoos
+- [x] GET /animals/{type} - return the animal with a list of zoos where they can be found
 
 For the PUT and POST you can assume you are sent all the data with the appropriate ids included
 
