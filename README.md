@@ -41,7 +41,7 @@ There is a many to many relationship between zoos and animals. A zoo may have ma
 
 Expose the following end points
 
-- [ ] GET /zoos - returns all zoos with their phone numbers and animals
+- [x] GET /zoos - returns all zoos with their phone numbers and animals
 - [ ] GET /zoos/{name} - return the zoo with this name with its phone numbers and animals
 
 - [ ] GET /animals - returns all animals with their zoos
