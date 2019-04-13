@@ -19,20 +19,20 @@ This is a basic database scheme with zoos, phone number and animals at the zoo.
 Create a REST API server to store and read data from a MySQL data. The table layouts should be
 
 - [x] Zoo
-  * zooid - long primary key
-  * zooname - String
+  * zoo_id - long primary key
+  * name - String
 
 - [x] Telephone
-  * phoneid - long primary key
-  * phonetype - String
-  * phonenumber - String
-  * zooid - foreign key
+  * phone_id - long primary key
+  * type - String
+  * number - String
+  * zoo_id - foreign key
   
 There is a one to many relationship between zoos and telephones. One zoo can have multiple phone numbers but each phone number can only belong to one zoo.
 
 - [x] Animal
-  * animalid - long primary key
-  * animaltype - String
+  * animal_id - long primary key
+  * type - String
 
 There is a many to many relationship between zoos and animals. A zoo may have many animal types and an animal type may be at many zoos.
 
@@ -41,10 +41,10 @@ There is a many to many relationship between zoos and animals. A zoo may have ma
 
 Expose the following end points
 
-- [ ] GET /zoos/zoos - returns all zoos with their phone numbers and animals
+- [ ] GET /zoos - returns all zoos with their phone numbers and animals
 - [ ] GET /zoos/{name} - return the zoo with this name with its phone numbers and animals
 
-- [ ] GET /animals/animals - returns all animals with their zoos
+- [ ] GET /animals - returns all animals with their zoos
 - [ ] GET /animals/{name} - return the animal with a list of zoos where they can be found
 
 For the PUT and POST you can assume you are sent all the data with the appropriate ids included
