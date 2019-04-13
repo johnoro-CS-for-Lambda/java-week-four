@@ -18,7 +18,7 @@ This is a basic database scheme with zoos, phone number and animals at the zoo.
 
 Create a REST API server to store and read data from a MySQL data. The table layouts should be
 
-- [ ] Zoo
+- [x] Zoo
   * zooid - long primary key
   * zooname - String
 
