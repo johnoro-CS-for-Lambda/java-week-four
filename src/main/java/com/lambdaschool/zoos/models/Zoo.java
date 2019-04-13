@@ -3,6 +3,7 @@ package com.lambdaschool.zoos.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "zoos")
@@ -12,12 +13,11 @@ public class Zoo {
   @Column(name = "zoo_id")
   private long id;
 
-  @Column(name = "zoo_name")
   private String name;
 
   @OneToMany(mappedBy = "zoo")
   @JsonIgnoreProperties("zoo")
-  private Set<Telephone> telephoneNumbers;
+  private Set<Telephone> telephones;
 
   @ManyToMany(cascade = CascadeType.ALL)
   @JoinTable(name = "zoos_join_animals",
@@ -45,12 +45,12 @@ public class Zoo {
     this.name = name;
   }
 
-  public Set<Telephone> getTelephoneNumbers() {
-    return telephoneNumbers;
+  public Set<Telephone> getTelephones() {
+    return telephones;
   }
 
-  public void setTelephoneNumbers(Set<Telephone> telephoneNumbers) {
-    this.telephoneNumbers = telephoneNumbers;
+  public void setTelephones(Set<Telephone> telephones) {
+    this.telephones = telephones;
   }
 
   public Set<Animal> getAnimals() {

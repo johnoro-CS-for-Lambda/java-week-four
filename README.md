@@ -22,7 +22,7 @@ Create a REST API server to store and read data from a MySQL data. The table lay
   * zooid - long primary key
   * zooname - String
 
-- [ ] Telephone
+- [x] Telephone
   * phoneid - long primary key
   * phonetype - String
   * phonenumber - String
