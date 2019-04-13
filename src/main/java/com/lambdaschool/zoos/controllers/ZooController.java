@@ -5,6 +5,7 @@ import com.lambdaschool.zoos.repositories.ZooRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,5 +20,10 @@ public class ZooController {
   @GetMapping
   public List<Zoo> findAll() {
     return repository.findAll();
+  }
+
+  @GetMapping(value = "{name}")
+  public Zoo findByName(@PathVariable("name") String name) {
+    return repository.findByName(name);
   }
 }
