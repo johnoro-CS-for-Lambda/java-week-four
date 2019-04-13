@@ -5,12 +5,12 @@ Using java-zoos as a starting point (https://github.com/LambdaSchool/java-zoos.g
 Use (https://github.com/LambdaSchool/java-ourcourses.git) as a model for how to add security.
 
 Security is:
-- [ ] ROLE ADMIN should be allowed to access /users and /admin
-- [ ] ROLE User should be allowed to access /animals and /zoos
-- [ ] ROLE Zoo should be allowed to access /zoos
-- [ ] ROLE animal should be allowed to access /animals
-- [ ] ROLE MGR (manager) should be allowed to only access /actuator (stretch goal).
-- [ ] Everyone should be allowd to access the swagger ui!
+- [x] ROLE `admin` should be allowed to access /users and /admin
+- [x] ROLE `user` should be allowed to access /animals and /zoos
+- [x] ROLE `zoo` should be allowed to access /zoos
+- [x] ROLE `animal` should be allowed to access /animals
+- [x] ROLE `manager` should be allowed to only access /actuator (stretch goal).
+- [x] Everyone should be allowed to access the swagger ui!
 
 # java-zoos
 
@@ -37,7 +37,7 @@ There is a one to many relationship between zoos and telephones. One zoo can hav
 There is a many to many relationship between zoos and animals. A zoo may have many animal types and an animal type may be at many zoos.
 
 - [ ] End points should return the data worked with or nothing if no data was found.
-- [ ] Swagger should be used to document your API, The default documentation is sufficient assuming appropriate names are used in your coding.
+- [x] Swagger should be used to document your API, The default documentation is sufficient assuming appropriate names are used in your coding.
 
 Expose the following end points
 
