@@ -1,5 +1,6 @@
 package com.lambdaschool.zoos.controllers;
 
+import com.lambdaschool.zoos.models.Telephone;
 import com.lambdaschool.zoos.models.Zoo;
 import com.lambdaschool.zoos.repositories.AnimalRepository;
 import com.lambdaschool.zoos.repositories.TelephoneRepository;
@@ -65,5 +66,50 @@ public class AdminController {
     return null;
   }
 
-  // TODO implement required post, put, and delete routes
+  @PutMapping(value = "telephones/{id}")
+  public Telephone updateTelephone(@RequestBody Telephone newTelephone, @PathVariable("id") long id) {
+    var foundTelephone = telephoneRepository.findById(id);
+    if (foundTelephone.isPresent()) {
+      Telephone telephone = foundTelephone.get();
+
+      if (newTelephone.getType() == null) {
+        newTelephone.setType(telephone.getType());
+      }
+      if (newTelephone.getNumber() == null) {
+        newTelephone.setNumber(telephone.getNumber());
+      }
+      if (newTelephone.getZoo() == null) {
+        newTelephone.setZoo(telephone.getZoo());
+      }
+
+      newTelephone.setId(id);
+      telephoneRepository.save(newTelephone);
+      return newTelephone;
+    }
+
+    return null;
+  }
+
+  @PostMapping(value = "telephones")
+  public Telephone addTelephone(@RequestBody Telephone newTelephone) {
+    Telephone telephone = telephoneRepository.save(newTelephone);
+    return telephone;
+  }
+
+  @DeleteMapping(value = "telephones/{id}")
+  public Telephone deleteTelephone(@PathVariable("id") long id) {
+    var foundTelephone = telephoneRepository.findById(id);
+
+    if (foundTelephone.isPresent()) {
+      Telephone telephone = foundTelephone.get();
+
+      telephoneRepository.deleteById(id);
+
+      return telephone;
+    }
+
+    return null;
+  }
+
+  // TODO implement post, put, and delete routes for animals
 }
