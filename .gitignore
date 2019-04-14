@@ -29,4 +29,4 @@ HELP.md
 .vscode/
 
 ### As a temp. solution to using no env. variables ###
-src/main/resources/application.properties
+# src/main/resources/application.properties
