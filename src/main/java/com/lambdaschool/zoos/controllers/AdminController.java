@@ -3,7 +3,7 @@ package com.lambdaschool.zoos.controllers;
 import com.lambdaschool.zoos.models.Animal;
 import com.lambdaschool.zoos.models.Telephone;
 import com.lambdaschool.zoos.models.Zoo;
-import com.lambdaschool.zoos.models.transactional.zooJoinAnimal;
+import com.lambdaschool.zoos.models.transactional.ZooJoinAnimal;
 import com.lambdaschool.zoos.repositories.AnimalRepository;
 import com.lambdaschool.zoos.repositories.TelephoneRepository;
 import com.lambdaschool.zoos.repositories.ZooRepository;
@@ -59,7 +59,7 @@ public class AdminController {
       Zoo zoo = foundZoo.get();
 
       zooRepository.deleteTelephones(id);
-      zooRepository.deleteZooJoinAnimal(id);
+      zooRepository.deleteAnimalsZoo(id);
       zooRepository.deleteById(id);
 
       return zoo;
@@ -146,7 +146,7 @@ public class AdminController {
     if (foundAnimal.isPresent()) {
       Animal animal = foundAnimal.get();
 
-      animalRepository.deleteZooJoinAnimal(id);
+      animalRepository.deleteZoosAnimal(id);
       animalRepository.deleteById(id);
 
       return animal;
@@ -156,8 +156,20 @@ public class AdminController {
   }
 
   @PostMapping(value = "zoos/animals")
-  public zooJoinAnimal addZooJoinAnimal(@RequestBody zooJoinAnimal ids) {
+  public ZooJoinAnimal addZooJoinAnimal(@RequestBody ZooJoinAnimal ids) {
     zooRepository.addZooJoinAnimal(ids.getZooId(), ids.getAnimalId());
     return ids;
+  }
+
+  @DeleteMapping(value = "zoos/{zooId}/animals/{animalId}")
+  public ZooJoinAnimal deleteZooJoinAnimal(
+    @PathVariable("zooId") long zooId,
+    @PathVariable("animalId") long animalId
+  ) {
+    ZooJoinAnimal zooJoinAnimal = new ZooJoinAnimal(zooId, animalId);
+
+    zooRepository.deleteZooJoinAnimal(zooId, animalId);
+
+    return zooJoinAnimal;
   }
 }

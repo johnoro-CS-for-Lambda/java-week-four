@@ -13,5 +13,5 @@ public interface AnimalRepository extends BaseRepository<Animal> {
   @Modifying
   @Query(value = "DELETE FROM zoos_join_animals " +
     "WHERE animal_id = :id", nativeQuery = true)
-  void deleteZooJoinAnimal(long id);
+  void deleteZoosAnimal(long id);
 }

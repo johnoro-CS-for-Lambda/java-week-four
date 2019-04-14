@@ -1,10 +1,10 @@
 package com.lambdaschool.zoos.models.transactional;
 
-public class zooJoinAnimal {
+public class ZooJoinAnimal {
   private long zooId;
   private long animalId;
 
-  public zooJoinAnimal(long zooId, long animalId) {
+  public ZooJoinAnimal(long zooId, long animalId) {
     this.zooId = zooId;
     this.animalId = animalId;
   }

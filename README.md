@@ -61,7 +61,7 @@ For the PUT and POST you can assume you are sent all the data with the appropria
 - [x] DELETE /admin/zoos/{id} - delete the zoo, associated phone numbers, and zoo animals combination associated with this zoo id
 - [x] DELETE /admin/telephones/{id} - delete the phone number associated with this id
 - [x] DELETE /admin/animals/{id} - delete the animal associated with this id including all the appropriate zoo animal combinations
-- [ ] DELETE /admin/zoos/{zooId}/animals/{animalId} - delete the zoo animal combination based off of ids. 
+- [x] DELETE /admin/zoos/{zooId}/animals/{animalId} - delete the zoo animal combination based off of ids. 
   * Hint: @PathVariable("zooId", long zooId), @PathVariable("animalId") long animalId
 
 Expose at least the following actuator endpoints to help with system management
