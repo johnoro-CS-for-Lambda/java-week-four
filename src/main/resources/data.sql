@@ -2,6 +2,7 @@ DELETE FROM zoos_join_animals;
 DELETE FROM animals;
 DELETE FROM telephones;
 DELETE FROM zoos;
+DELETE FROM users;
 
 INSERT INTO zoos (zoo_id, name)
   VALUES(1, 'Regal Zoo'),
@@ -27,3 +28,8 @@ INSERT INTO zoos_join_animals (zoo_id, animal_id)
         (1, 5),
         (2, 2),
         (3, 3);
+
+INSERT INTO users (user_id, name, password, role)
+  VALUES(1, 'admin', 'pass', 'admin'),
+        (2, 'user', 'pass', 'user'),
+        (3, 'manager', 'pass', 'manager');
