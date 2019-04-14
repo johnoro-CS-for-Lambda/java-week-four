@@ -15,7 +15,7 @@ public class Zoo {
 
   private String name;
 
-  @OneToMany(mappedBy = "zoo")
+  @OneToMany(mappedBy = "zoo", fetch = FetchType.EAGER)
   @JsonIgnoreProperties("zoo")
   private Set<Telephone> telephones;
 

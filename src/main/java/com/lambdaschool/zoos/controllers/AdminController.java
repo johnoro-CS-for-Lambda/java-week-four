@@ -42,5 +42,28 @@ public class AdminController {
     return null;
   }
 
+  @PostMapping(value = "zoos")
+  public Zoo addZoo(@RequestBody Zoo newZoo) {
+    Zoo zoo = zooRepository.save(newZoo);
+    return zoo;
+  }
+
+  @DeleteMapping(value = "zoos/{id}")
+  public Zoo deleteZoo(@PathVariable("id") long id) {
+    var foundZoo = zooRepository.findById(id);
+
+    if (foundZoo.isPresent()) {
+      Zoo zoo = foundZoo.get();
+
+      zooRepository.deleteTelephones(id);
+      zooRepository.deleteZooJoinAnimal(id);
+      zooRepository.deleteById(id);
+
+      return zoo;
+    }
+
+    return null;
+  }
+
   // TODO implement required post, put, and delete routes
 }

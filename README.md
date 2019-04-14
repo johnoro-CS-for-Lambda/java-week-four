@@ -49,16 +49,16 @@ Expose the following end points
 
 For the PUT and POST you can assume you are sent all the data with the appropriate ids included
 
-- [ ] PUT /admin/zoos/{id} - update the zoo referenced by the id number with the provided information
+- [x] PUT /admin/zoos/{id} - update the zoo referenced by the id number with the provided information
 - [ ] PUT /admin/phones/{id} - update the telephone referenced by the id number with the provided information
 - [ ] PUT /admin/animals/{id} - update the animal referenced by the id number with the provided information
 
-- [ ] POST /admin/zoos - add the zoo
+- [x] POST /admin/zoos - add the zoo
 - [ ] POST /admin/phones - add the phone number
 - [ ] POST /admin/animals - add the animal
 - [ ] POST /admin/zoos/animals - add the zooid, animalid combination to the zoo animals relations table
 
-- [ ] DELETE /admin/zoos/{id} - delete the zoo, associated phone numbers, and zoo animals combination associated with this zoo id
+- [x] DELETE /admin/zoos/{id} - delete the zoo, associated phone numbers, and zoo animals combination associated with this zoo id
 - [ ] DELETE /admin/phones/{id} - delete the phone number associated with this id
 - [ ] DELETE /admin/animals/{id} - delete the animal associated with this id including all the appropriate zoo animal combinations
 - [ ] DELETE /admin/zoos/{zooid}/animals/{animalid} - delete the zoo animal combination based off of ids. 
