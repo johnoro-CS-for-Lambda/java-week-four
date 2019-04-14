@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Table(name = "telephones")
 public class Telephone {
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "telephone_id")
   private long id;
 
@@ -16,7 +16,7 @@ public class Telephone {
 
   private String number;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "zoo_id")
   @JsonIgnoreProperties("telephones")
   private Zoo zoo;

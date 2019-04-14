@@ -9,7 +9,7 @@ import java.util.Set;
 @Table(name = "zoos")
 public class Zoo {
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "zoo_id")
   private long id;
 
@@ -19,7 +19,7 @@ public class Zoo {
   @JsonIgnoreProperties("zoo")
   private Set<Telephone> telephones;
 
-  @ManyToMany(cascade = CascadeType.ALL)
+  @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
   @JoinTable(name = "zoos_join_animals",
     joinColumns = { @JoinColumn(name="zoo_id") },
     inverseJoinColumns = { @JoinColumn(name="animal_id") }

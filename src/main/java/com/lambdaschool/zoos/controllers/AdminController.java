@@ -1,5 +1,6 @@
 package com.lambdaschool.zoos.controllers;
 
+import com.lambdaschool.zoos.models.Animal;
 import com.lambdaschool.zoos.models.Telephone;
 import com.lambdaschool.zoos.models.Zoo;
 import com.lambdaschool.zoos.repositories.AnimalRepository;
@@ -111,5 +112,45 @@ public class AdminController {
     return null;
   }
 
-  // TODO implement post, put, and delete routes for animals
+  @PutMapping(value = "animals/{id}")
+  public Animal updateAnimal(@RequestBody Animal newAnimal, @PathVariable("id") long id) {
+    var foundAnimal = animalRepository.findById(id);
+
+    if (foundAnimal.isPresent()) {
+      Animal animal = foundAnimal.get();
+      if (newAnimal.getType() == null) {
+        newAnimal.setType(animal.getType());
+      }
+      if (newAnimal.getZoos() == null) {
+        newAnimal.setZoos(animal.getZoos());
+      }
+      newAnimal.setId(id);
+      animalRepository.save(newAnimal);
+      return newAnimal;
+    }
+
+    return null;
+  }
+
+  @PostMapping(value = "animals")
+  public Animal addAnimal(@RequestBody Animal newAnimal) {
+    Animal animal = animalRepository.save(newAnimal);
+    return animal;
+  }
+
+  @DeleteMapping(value = "animals/{id}")
+  public Animal deleteAnimal(@PathVariable("id") long id) {
+    var foundAnimal = animalRepository.findById(id);
+
+    if (foundAnimal.isPresent()) {
+      Animal animal = foundAnimal.get();
+
+      animalRepository.deleteZooJoinAnimal(id);
+      animalRepository.deleteById(id);
+
+      return animal;
+    }
+
+    return null;
+  }
 }

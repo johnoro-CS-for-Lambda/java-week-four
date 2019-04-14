@@ -9,13 +9,15 @@ import java.util.Set;
 @Table(name = "animals")
 public class Animal {
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "animal_id")
   private long id;
 
   private String type;
 
-  @ManyToMany(cascade = CascadeType.ALL, mappedBy = "animals")
+  @ManyToMany(cascade = CascadeType.ALL,
+    mappedBy = "animals", fetch = FetchType.EAGER
+  )
   @JsonIgnoreProperties("animals")
   private Set<Zoo> zoos;
 

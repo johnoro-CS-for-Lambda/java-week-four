@@ -51,16 +51,16 @@ For the PUT and POST you can assume you are sent all the data with the appropria
 
 - [x] PUT /admin/zoos/{id} - update the zoo referenced by the id number with the provided information
 - [x] PUT /admin/telephones/{id} - update the telephone referenced by the id number with the provided information
-- [ ] PUT /admin/animals/{id} - update the animal referenced by the id number with the provided information
+- [x] PUT /admin/animals/{id} - update the animal referenced by the id number with the provided information
 
 - [x] POST /admin/zoos - add the zoo
 - [x] POST /admin/telephones - add the phone number
-- [ ] POST /admin/animals - add the animal
+- [x] POST /admin/animals - add the animal
 - [ ] POST /admin/zoos/animals - add the zooId, animalId combination to the zoo animals relations table
 
 - [x] DELETE /admin/zoos/{id} - delete the zoo, associated phone numbers, and zoo animals combination associated with this zoo id
 - [x] DELETE /admin/telephones/{id} - delete the phone number associated with this id
-- [ ] DELETE /admin/animals/{id} - delete the animal associated with this id including all the appropriate zoo animal combinations
+- [x] DELETE /admin/animals/{id} - delete the animal associated with this id including all the appropriate zoo animal combinations
 - [ ] DELETE /admin/zoos/{zooId}/animals/{animalId} - delete the zoo animal combination based off of ids. 
   * Hint: @PathVariable("zooId", long zooId), @PathVariable("animalId") long animalId
 
