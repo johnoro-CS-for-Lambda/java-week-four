@@ -65,9 +65,9 @@ For the PUT and POST you can assume you are sent all the data with the appropria
   * Hint: @PathVariable("zooId", long zooId), @PathVariable("animalId") long animalId
 
 Expose at least the following actuator endpoints to help with system management
-- [ ] /health
-- [ ] /info
-- [ ] /metrics
+- [x] /actuator/health
+- [x] /actuator/info
+- [x] /actuator/metrics
 
 Stretch Goals
 - [ ] Update each of the three actuator endpoints to report your own messages
