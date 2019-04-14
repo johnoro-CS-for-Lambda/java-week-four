@@ -56,7 +56,7 @@ For the PUT and POST you can assume you are sent all the data with the appropria
 - [x] POST /admin/zoos - add the zoo
 - [x] POST /admin/telephones - add the phone number
 - [x] POST /admin/animals - add the animal
-- [ ] POST /admin/zoos/animals - add the zooId, animalId combination to the zoo animals relations table
+- [x] POST /admin/zoos/animals - add the zooId, animalId combination to the zoo animals relations table
 
 - [x] DELETE /admin/zoos/{id} - delete the zoo, associated phone numbers, and zoo animals combination associated with this zoo id
 - [x] DELETE /admin/telephones/{id} - delete the phone number associated with this id

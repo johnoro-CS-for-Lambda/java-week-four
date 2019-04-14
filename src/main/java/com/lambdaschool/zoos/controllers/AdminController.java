@@ -3,6 +3,7 @@ package com.lambdaschool.zoos.controllers;
 import com.lambdaschool.zoos.models.Animal;
 import com.lambdaschool.zoos.models.Telephone;
 import com.lambdaschool.zoos.models.Zoo;
+import com.lambdaschool.zoos.models.transactional.zooJoinAnimal;
 import com.lambdaschool.zoos.repositories.AnimalRepository;
 import com.lambdaschool.zoos.repositories.TelephoneRepository;
 import com.lambdaschool.zoos.repositories.ZooRepository;
@@ -152,5 +153,11 @@ public class AdminController {
     }
 
     return null;
+  }
+
+  @PostMapping(value = "zoos/animals")
+  public zooJoinAnimal addZooJoinAnimal(@RequestBody zooJoinAnimal ids) {
+    zooRepository.addZooJoinAnimal(ids.getZooId(), ids.getAnimalId());
+    return ids;
   }
 }

@@ -20,4 +20,10 @@ public interface ZooRepository extends BaseRepository<Zoo> {
   @Query(value = "DELETE FROM zoos_join_animals " +
     "WHERE zoo_id = :id", nativeQuery = true)
   void deleteZooJoinAnimal(long id);
+
+  @Transactional
+  @Modifying
+  @Query(value = "INSERT INTO zoos_join_animals (zoo_id, animal_id)" +
+    "VALUES(:zooId, :animalId)", nativeQuery = true)
+  void addZooJoinAnimal(long zooId, long animalId);
 }
